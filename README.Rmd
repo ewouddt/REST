@@ -43,6 +43,6 @@ devtools::install_github("ewouddt/REST")
 ```
 ## Info & Links
 
-* *Detailed Guide* (See /vignettes/RESTguide.pdf).
+* *Detailed Guide*  (See [Vignette](https://github.com/ewouddt/REST/raw/master/vignettes/RESTguide.pdf)).
 * *R-Forge Project Page* ([R-Forge](https://r-forge.r-project.org/R/?group_id=2045)).
 
