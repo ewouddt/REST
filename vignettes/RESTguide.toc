@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {5.1}General Script}{5}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}General Window Information}{5}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}Making a Tab}{7}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Frame Scripts}{9}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Frame Scripts}{10}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Example Script - Plaid Biclustering}{16}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Testing your windows}{18}{subsection.5.4}
 \contentsline {subsection}{\numberline {5.5}Advanced Techniques}{18}{subsection.5.5}

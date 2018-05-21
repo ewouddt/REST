@@ -24,6 +24,7 @@
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
 \newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
 
 \usepackage{framed}
 \makeatletter
@@ -73,7 +74,7 @@
 }
 
 
-\title{RcmdrPlugin Easy Script Templates 1.0.2}
+\title{RcmdrPlugin Easy Script Templates 1.0.3}
 \author{Ewoud De Troyer}
 \date{}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -317,6 +318,7 @@ store information about the window that you are about to create.
         \hlstd{usetabs} \hlkwb{<-} \hlnum{TRUE}
         \hlstd{tabnames} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"Tab 1"}\hlstd{,}\hlstr{"Tab 2"}\hlstd{,}\hlstr{"Tab 3"}\hlstd{)}
         \hlstd{helppage} \hlkwb{<-} \hlstr{"plot"}
+        \hlstd{offset} \hlkwb{<-} \hlnum{10}
 
         \hlcom{# Do not change these lines}
         \hlkwa{if}\hlstd{(usetabs)\{ntabs} \hlkwb{<-} \hlkwd{length}\hlstd{(tabnames)\}} \hlkwa{else} \hlstd{\{ntabs} \hlkwb{<-} \hlnum{1}\hlstd{\}}
@@ -356,6 +358,7 @@ biclustering plaid method.
   \item[$\bullet$ \texttt{helppage}:] The name of the helppage the help button
   should be directed to. (\verb|help(helppage)|) This is only relevant if the
   help button is created in the grid.
+  \item[$\bullet$ \texttt{offset}:] The offset of the new window (in pixels) from the top-left of the Commander window. (default=10)
 \end{description}
 \noindent After filling in these variables, you also have the possibility to add
 some grid buttons. These are some standard buttons which will appear at the
@@ -486,8 +489,8 @@ This can be with or without a border around the row(s).\\
 The second purpose is connected to the way frames are added in this {\it grid}.
 Sometimes if frames have a large difference in size, other frames might seem to
 be jumping to the right, trying to fit in one general grid. In general if you
-see this happening, putting this row(s) in a box will solve this problem and the
-frames will again be pulled towards the left.\\
+see this happening, putting this row(s) in a box will solve this problem because the grid will now be locally in this box.
+This results into the frames being pulled towards the left again (see Figure \ref{combine_rows}).\\
 Creating these boxes by combining rows is again very easy, one simply needs to
 use the \verb|.combine.rows| function which will save the necessary information
 in the \verb|grid.rows| object. The function only has three arguments you should
@@ -496,6 +499,16 @@ combine, \verb|title| to give the box a title (\verb|""| means no title) and
 \verb|border| to decide if there should be a border.\\
 Note that in contrast to the grid configuration, you can call this function
 multiple times until the desired result is obtained.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{figures/combinerows_grid.png}
+\caption{{\it Left:} Rows 1 and 2+3 were combined with boxes and titles ; {\it
+Right:} No rows combined. Frames are stuck in a general grid and jump more to
+the right instead of in a `local' grid in a row box \label{combinerows_grid}}
+\end{figure}
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -510,11 +523,12 @@ multiple times until the desired result is obtained.
 \hlcom{###################################################################}
 \hlcom{## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##}
 \hlcom{###################################################################}
-\hlkwd{GUI_template}\hlstd{(}\hlkwc{dialogtitle}\hlstd{=dialogtitle,}\hlkwc{helppage}\hlstd{=helppage,}\hlkwc{make.resetgws.button}\hlstd{=}
-                \hlstd{make.resetgws.button,}\hlkwc{make.setwd.button}\hlstd{=make.setwd.button,}
-                \hlkwc{make.help.button}\hlstd{=make.help.button,}\hlkwc{make.seed.button}\hlstd{=make.seed.button,}
-                \hlkwc{usetabs}\hlstd{=usetabs,}\hlkwc{tabnames}\hlstd{=tabnames,}\hlkwc{grid.config}\hlstd{=grid.config,}\hlkwc{grid.rows}\hlstd{=grid.rows,}
-                \hlkwc{new.frames}\hlstd{=new.frames)}
+\hlkwd{GUI_template}\hlstd{(}\hlkwc{dialogtitle}\hlstd{=dialogtitle,}\hlkwc{helppage}\hlstd{=helppage,}\hlkwc{offset}\hlstd{=offset,}
+  \hlkwc{make.resetgws.button}\hlstd{=make.resetgws.button,}
+  \hlkwc{make.setwd.button}\hlstd{=make.setwd.button,}
+  \hlkwc{make.help.button}\hlstd{=make.help.button,}\hlkwc{make.seed.button}\hlstd{=make.seed.button,}
+  \hlkwc{usetabs}\hlstd{=usetabs,}\hlkwc{tabnames}\hlstd{=tabnames,}\hlkwc{grid.config}\hlstd{=grid.config,}
+  \hlkwc{grid.rows}\hlstd{=grid.rows,}\hlkwc{new.frames}\hlstd{=new.frames)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}

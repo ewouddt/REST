@@ -24,7 +24,7 @@
 }
 
 
-\title{RcmdrPlugin Easy Script Templates 1.0.2}
+\title{RcmdrPlugin Easy Script Templates 1.0.3}
 \author{Ewoud De Troyer}
 \date{}
 
@@ -266,6 +266,7 @@ GUI_WINDOW <- function(list.info=list()){
 	usetabs <- TRUE
 	tabnames <- c("Tab 1","Tab 2","Tab 3")
 	helppage <- "plot" 
+	offset <- 10
 	
 	# Do not change these lines
 	if(usetabs){ntabs <- length(tabnames)} else {ntabs <- 1}
@@ -303,6 +304,7 @@ biclustering plaid method.
   \item[$\bullet$ \texttt{helppage}:] The name of the helppage the help button
   should be directed to. (\verb|help(helppage)|) This is only relevant if the
   help button is created in the grid.
+  \item[$\bullet$ \texttt{offset}:] The offset of the new window (in pixels) from the top-left of the Commander window. (default=10)
 \end{description}
 \noindent After filling in these variables, you also have the possibility to add
 some grid buttons. These are some standard buttons which will appear at the
@@ -462,12 +464,12 @@ Tab <- 2
 ###################################################################
 ## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##
 ###################################################################
-GUI_template(dialogtitle=dialogtitle,helppage=helppage,make.resetgws.button=
-		make.resetgws.button,make.setwd.button=make.setwd.button,
-		make.help.button=make.help.button,make.seed.button=make.seed.button,
-		usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,
-		new.frames=new.frames)
-
+GUI_template(dialogtitle=dialogtitle,helppage=helppage,offset=offset,
+  make.resetgws.button=make.resetgws.button,
+  make.setwd.button=make.setwd.button,
+  make.help.button=make.help.button,make.seed.button=make.seed.button,
+  usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,
+  grid.rows=grid.rows,new.frames=new.frames)
 @
 \noindent Next, you can repeat these 3 steps for as many tabs as you have
 defined in the beginning. Finally, to end the \verb|GUI_WINDOW| function, the

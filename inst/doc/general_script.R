@@ -11,6 +11,8 @@ GUI_WINDOW <- function(list.info=list()){
 	usetabs <- TRUE
 	tabnames <- c("Tab 1","Tab 2","Tab 3")
 	helppage <- "plot" 
+	offset <- 10
+	
 	
 	# Do not change these lines
 	if(usetabs){ntabs <- length(tabnames)} else {ntabs <- 1}
@@ -56,7 +58,7 @@ GUI_WINDOW <- function(list.info=list()){
 	###################################################################
 	## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##
 	###################################################################
-	GUI_template(dialogtitle=dialogtitle,helppage=helppage,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
+	GUI_template(dialogtitle=dialogtitle,helppage=helppage,offset=offset,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
 	
 }
 

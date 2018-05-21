@@ -1,6 +1,7 @@
 
 
-GUI_template <- function(dialogtitle="",helppage="",usetabs=FALSE,tabnames=c(),make.resetgws.button=FALSE,make.setwd.button=FALSE,make.help.button=FALSE,make.seed.button=FALSE,grid.config=grid.config,grid.rows=grid.rows,new.frames){
+GUI_template <- function(dialogtitle="",helppage="",usetabs=FALSE,tabnames=c(),make.resetgws.button=FALSE,make.setwd.button=FALSE,make.help.button=FALSE,make.seed.button=FALSE,grid.config=grid.config,grid.rows=grid.rows,new.frames,
+                         offset=10){
 	
 	
 	if(dialogtitle==""){
@@ -21,7 +22,7 @@ GUI_template <- function(dialogtitle="",helppage="",usetabs=FALSE,tabnames=c(),m
 		for(t in 1:n.tabs){
 			tabs <- c(tabs,paste("Tab",t,sep=""))
 		}
-		initializeDialog(title = gettextRcmdr(paste(dialogtitle,sep="")), use.tabs=TRUE,tabs=tabs)
+		initializeDialog(title = gettextRcmdr(paste(dialogtitle,sep="")), use.tabs=TRUE,tabs=tabs,offset=offset)
 		for(t in 1:n.tabs){
 			tab.frame.command <- paste(tabs[t],"Frame <- tkframe(",tabs[t],")",sep="")	
 			.eval.command(tab.frame.command)
@@ -31,7 +32,7 @@ GUI_template <- function(dialogtitle="",helppage="",usetabs=FALSE,tabnames=c(),m
 	} 
 	else{
 		n.tabs <- 1
-		initializeDialog(title = gettextRcmdr(paste(dialogtitle,sep="")), use.tabs=FALSE)
+		initializeDialog(title = gettextRcmdr(paste(dialogtitle,sep="")), use.tabs=FALSE,offset=offset)
 		Tab1Frame <- tkframe(top)
 	}
 	

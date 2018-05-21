@@ -17,6 +17,7 @@ main_WINDOW <- function(list.info=list()){
 	grid.rows <- .initialize.grid.rows(ntabs)
 		
 	helppage <- ""
+	offset <- 10
 		
 	##################
 	## GRID BUTTONS ##
@@ -93,7 +94,7 @@ main_WINDOW <- function(list.info=list()){
 	###################################################################
 	## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##
 	###################################################################
-	GUI_template(dialogtitle=dialogtitle,helppage=helppage,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
+	GUI_template(dialogtitle=dialogtitle,helppage=helppage,offset=offset,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
 	
 }
 
@@ -115,6 +116,7 @@ choose_WINDOW <- function(){
 	grid.rows <- .initialize.grid.rows(ntabs)
 		
 	helppage <- ""
+	offset <- 10
 	
 	##################
 	## GRID BUTTONS ##
@@ -195,7 +197,7 @@ choose_WINDOW <- function(){
 	###################################################################
 	## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##
 	###################################################################
-	GUI_template(dialogtitle=dialogtitle,helppage=helppage,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
+	GUI_template(dialogtitle=dialogtitle,helppage=helppage,offset=offset,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
 		
 }
 

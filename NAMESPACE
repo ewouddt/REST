@@ -3,7 +3,7 @@
 
 import(stats, Rcmdr)
 importFrom(tcltk,ttknotebook,tkwidget,.Tk.subwin,.Tk.newwin,tkbutton,ttklabel,tkadd)
-
+importFrom(utils,help)
 
 
 ## OWN FUNCTIONS EXPORT ##

@@ -9,9 +9,10 @@ plaid_WINDOW <- function(list.info=list()){
 	dialogtitle <- "Plaid Biclustering"
 	
 	
-	usetabs <- TRUE
-	
+	usetabs <- TRUE	
 	tabnames <- c("Biclustering","Plot & Diagnostics")
+	helppage <- "BCPlaid"
+	offset <- 10
 	
 	if(usetabs){ntabs <- length(tabnames)} else {ntabs <- 1}
 	new.frames <- .initialize.new.frames(ntabs)
@@ -19,7 +20,7 @@ plaid_WINDOW <- function(list.info=list()){
 	grid.rows <- .initialize.grid.rows(ntabs)
 	
 	
-	helppage <- "BCPlaid"
+	
 	
 	
 	##################
@@ -176,7 +177,7 @@ plaid_WINDOW <- function(list.info=list()){
 	###################################################################
 	## USE ALL THE ARGUMENTS IN THE GENERAL GUI_TEMPLATE FUNCTION    ##
 	###################################################################
-	GUI_template(dialogtitle=dialogtitle,helppage=helppage,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
+	GUI_template(dialogtitle=dialogtitle,helppage=helppage,offset=offset,make.resetgws.button=make.resetgws.button,make.setwd.button=make.setwd.button,make.help.button=make.help.button,make.seed.button=make.seed.button,usetabs=usetabs,tabnames=tabnames,grid.config=grid.config,grid.rows=grid.rows,new.frames=new.frames)
 	
 }
 
